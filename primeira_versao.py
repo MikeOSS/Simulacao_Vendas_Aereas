@@ -6,6 +6,7 @@
 #   . João Paulo Ferreira
 #   . Leonardo Gambaroni ALves
 #   . Miguel Fernandes Costacurta
+#   . Max Thomazini Barbosa
 
 import os
 
