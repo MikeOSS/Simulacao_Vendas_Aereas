@@ -71,8 +71,8 @@ def consulta_voo():
     if opcao == 1:
         codigo_voo = int(input('Digite o número do voo: '))
         
-        for codigo in voos.keys():
-            while codigo_voo not in codigo:
+        for codigo_voo in voos.keys():
+            while codigo_voo not in voos.keys():
                 print("==========================================")
                 print("             VOO NÃO EXISTE               ")
                 print("      Digite outro codigo de viagem       ")
