@@ -77,9 +77,9 @@ def consulta_voo():
                 print("             VOO NÃO EXISTE               ")
                 print("      Digite outro codigo de viagem       ")
                 print("==========================================")
-                cidade_voo = input("Digite a cidade de origem do voo: ")
+                Codigo_voo = input("Digite a cidade de origem do voo: ")
             
-            if cidade_voo in voos.key():
+            if codigo_voo in voos.key():
                 print(f'''Número do voo: {codigo} 
                         \nCidade de origem:{voos[codigo][0]} 
                         \nCidade de destino: {voos[codigo][1]}
@@ -121,7 +121,7 @@ def consulta_voo():
                 print("             VOO NÃO EXISTE               ")
                 print("       Digite outra cidade de origem      ")
                 print("==========================================")
-                cidade_org = input("Digite a cidade de origem do voo: ")
+                cidade_dest = input("Digite a cidade de origem do voo: ")
             
             if cidade_dest in infos[1]:
                 print(f'''Número do voo: {codigo} 
