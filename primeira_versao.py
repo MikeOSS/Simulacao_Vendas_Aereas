@@ -54,27 +54,70 @@ def cadastro_voo():
 def consulta_voo():
     print('==============================================================')
     print('                 COMO DESEJA CONSULTAR O VOO?                 ')
-    print('                      1. Pelo Código                          ')
-    print('                      2. Pela cidade de origem                ')
-    print('                      3. Pela cidade de destino               ')
+    print('1. Pelo Código.                                               ')
+    print('2. Pela cidade de origem.                                     ')
+    print('3. Pela cidade de destino.                                    ')
     opcao = int(input('Digite a opção que você deseja (1 - 3): '))
+    os.system('cls' if os.name == 'nt' else 'clear')
+
     while opcao < 1 or opcao > 3:
         print("==========================================")
         print("             VALOR INVÁLIDO               ")
         print("       Digite um número entre 1 e 3       ")
         print("==========================================")
         opcao = int(input('Digite a opção que você deseja (1 - 3): '))
+        os.system('cls' if os.name == 'nt' else 'clear')
 
     if opcao == 1:
         codigo_voo = int(input('Digite o número do voo: '))
-        print(voos[codigo_voo])
+        
+        while codigo_voo not in voos.keys():
+            print("==========================================")
+            print("             VOO NÃO EXISTE               ")
+            print("       Digite um número de outro Voo      ")
+            print("==========================================")
+            
+            codigo_voo = int(input("Digite o número do voo: "))
 
+        if codigo_voo in voos.keys():
+            print(f'''Número do voo: {codigo_voo} \nCidade de origem:
+            {voos[codigo_voo][0]} \nCidade de destino: {voos[codigo_voo][1]}
+            \nQuantidade de escalas: {voos[codigo_voo][2]} \nPreço passagem: 
+            {voos[codigo_voo][3]}''')
+
+        input('\n\t<< Tecle Enter para continuar >>')
+        os.system('cls' if os.name == 'nt' else 'clear')
+
+    elif opcao == 2:
+            cidade_org = input('Digite a cidade de origem do voo: ')
+            
+            for codigo, infos in voos.items():
+                while cidade_org not in infos:
+                    print("==========================================")
+                    print("             VOO NÃO EXISTE               ")
+                    print("       Digite outra cidade de origem      ")
+                    print("==========================================")
+                    cidade_org = input("Digite a cidade de origem do voo: ")
+            
+                if cidade_org in infos[0]:
+                    print(f'''Número do voo: {codigo} \nCidade de origem:
+                    {voos[codigo][0]} \nCidade de destino: {voos[codigo][1]}
+                    \nQuantidade de escalas: {voos[codigo][2]} \nPreço passagem: 
+                    {voos[codigo][3]}''')
+            
+            
+    
+
+# #def escala_menor(): 
+#     menor = 100000
+#     #for i in voos.values():
+        
 
 while fim == 1:
 
     print("==============================================================")
     print(f"                    MENU DAS VENDAS AEREAS                   ")
-    print("                           SIMULACAO                        \n")
+    print("                           SIMULACAO                          ")
     print("\n                      ESCOLHA UMA OPÇÃO                   \n")
     print("1. Cadastro do Voo.")
     print("2. Consultar Voo.")
@@ -114,3 +157,6 @@ while fim == 1:
 
     elif opcao == 7:
         fim = 0
+        
+
+    
