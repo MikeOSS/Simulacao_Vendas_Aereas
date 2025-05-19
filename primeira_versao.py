@@ -71,39 +71,67 @@ def consulta_voo():
     if opcao == 1:
         codigo_voo = int(input('Digite o número do voo: '))
         
-        while codigo_voo not in voos.keys():
-            print("==========================================")
-            print("             VOO NÃO EXISTE               ")
-            print("       Digite um número de outro Voo      ")
-            print("==========================================")
+        for codigo in voos.keys():
+            while codigo_voo not in voos.keys():
+                print("==========================================")
+                print("             VOO NÃO EXISTE               ")
+                print("      Digite outro codigo de viagem       ")
+                print("==========================================")
+                cidade_voo = input("Digite a cidade de origem do voo: ")
             
-            codigo_voo = int(input("Digite o número do voo: "))
-
-        if codigo_voo in voos.keys():
-            print(f'''Número do voo: {codigo_voo} \nCidade de origem:
-            {voos[codigo_voo][0]} \nCidade de destino: {voos[codigo_voo][1]}
-            \nQuantidade de escalas: {voos[codigo_voo][2]} \nPreço passagem: 
-            {voos[codigo_voo][3]}''')
-
+            if cidade_voo in voos.key():
+                print(f'''Número do voo: {codigo} 
+                        \nCidade de origem:{voos[codigo][0]} 
+                        \nCidade de destino: {voos[codigo][1]}
+                        \nQuantidade de escalas: {voos[codigo][2]}
+                        \nPreço passagem: {voos[codigo][3]}''')
+                    
         input('\n\t<< Tecle Enter para continuar >>')
         os.system('cls' if os.name == 'nt' else 'clear')
 
+
     elif opcao == 2:
-            cidade_org = input('Digite a cidade de origem do voo: ')
+        cidade_org = input('Digite a cidade de origem do voo: ')
             
-            for codigo, infos in voos.items():
-                while cidade_org not in infos:
-                    print("==========================================")
-                    print("             VOO NÃO EXISTE               ")
-                    print("       Digite outra cidade de origem      ")
-                    print("==========================================")
-                    cidade_org = input("Digite a cidade de origem do voo: ")
+        for codigo, infos in voos.items():
+            while cidade_org not in infos:
+                print("==========================================")
+                print("             VOO NÃO EXISTE               ")
+                print("       Digite outra cidade de origem      ")
+                print("==========================================")
+                cidade_org = input("Digite a cidade de origem do voo: ")
             
-                if cidade_org in infos[0]:
-                    print(f'''Número do voo: {codigo} \nCidade de origem:
-                    {voos[codigo][0]} \nCidade de destino: {voos[codigo][1]}
-                    \nQuantidade de escalas: {voos[codigo][2]} \nPreço passagem: 
-                    {voos[codigo][3]}''')
+            if cidade_org in infos[0]:
+               print(f'''Número do voo:{codigo} 
+                          \nCidade de origem:{voos[codigo][0]} 
+                          \nCidade de destino: {voos[codigo][1]}
+                          \nQuantidade de escalas:{voos[codigo][2]}
+                          \nPreço passagem: {voos[codigo][3]}''')
+               
+        input('\n\t<< Tecle Enter para continuar >>')
+        os.system('cls' if os.name == 'nt' else 'clear')
+
+
+    elif opcao == 3:
+        cidade_dest = input('Digite a cidade de origem do voo: ')
+            
+        for codigo, infos in voos.items():
+            while cidade_dest not in infos:
+                print("==========================================")
+                print("             VOO NÃO EXISTE               ")
+                print("       Digite outra cidade de origem      ")
+                print("==========================================")
+                cidade_org = input("Digite a cidade de origem do voo: ")
+            
+            if cidade_dest in infos[1]:
+                print(f'''Número do voo: {codigo} 
+                        \nCidade de origem:{voos[codigo][0]} 
+                        \nCidade de destino:{voos[codigo][1]}
+                        \nQuantidade de escalas:{voos[codigo][2]}
+                        \nPreço passagem: {voos[codigo][3]}''')
+                    
+        input('\n\t<< Tecle Enter para continuar >>')
+        os.system('cls' if os.name == 'nt' else 'clear')
             
             
     
