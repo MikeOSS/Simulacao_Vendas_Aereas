@@ -81,10 +81,10 @@ def consulta_voo():
             
             if codigo_voo in voos.keys():
                print(f'''Número do voo: {codigo_voo} 
-                         Cidade de origem:{voos[codigo_voo][0]} 
-                         Cidade de destino:{voos[codigo_voo][1]}
-                         Quantidade de escalas:{voos[codigo_voo][2]}
-                         Preço passagem: {voos[codigo_voo][3]}''')
+                Cidade de origem:{voos[codigo_voo][0]} 
+                Cidade de destino:{voos[codigo_voo][1]}
+                Quantidade de escalas:{voos[codigo_voo][2]}
+                Preço passagem: {voos[codigo_voo][3]}''')
                     
         input('\n\t<< Tecle Enter para continuar >>')
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -102,11 +102,11 @@ def consulta_voo():
                 cidade_org = input("Digite a cidade de origem do voo: ")
             
             if cidade_org in infos[0]:
-               print(f'''Número do voo: {codigo} 
-                         Cidade de origem:{voos[codigo][0]} 
-                         Cidade de destino:{voos[codigo][1]}
-                         Quantidade de escalas:{voos[codigo][2]}
-                         Preço passagem: {voos[codigo][3]}''')
+                print(f'''Número do voo: {codigo} 
+                Cidade de origem:{voos[codigo][0]} 
+                Cidade de destino:{voos[codigo][1]}
+                Quantidade de escalas:{voos[codigo][2]}
+                Preço passagem: {voos[codigo][3]}''')
                
         input('\n\t<< Tecle Enter para continuar >>')
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -125,10 +125,10 @@ def consulta_voo():
             
             if cidade_dest in infos[1]:
                 print(f'''Número do voo: {codigo} 
-                          Cidade de origem:{voos[codigo][0]} 
-                          Cidade de destino:{voos[codigo][1]}
-                          Quantidade de escalas:{voos[codigo][2]}
-                          Preço passagem: {voos[codigo][3]}''')
+                Cidade de origem:{voos[codigo][0]} 
+                Cidade de destino:{voos[codigo][1]}
+                Quantidade de escalas:{voos[codigo][2]}
+                Preço passagem: {voos[codigo][3]}''')
                     
         input('\n\t<< Tecle Enter para continuar >>')
         os.system('cls' if os.name == 'nt' else 'clear')
