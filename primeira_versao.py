@@ -46,7 +46,8 @@ def cadastro_voo():
     info_voo.append(origem)
     info_voo.append(destino)
     info_voo.append(numEscala)
-    info_voo.append(preco)
+    info_voo.append(p
+                    reco)
 
     voos[codigo] = info_voo
 
@@ -80,7 +81,8 @@ def consulta_voo():
                 Codigo_voo = int(input("Digite a cidade de origem do voo: "))
             
             if codigo_voo in voos.keys():
-               print(f'''Número do voo: {codigo_voo} 
+               print(f'''
+                Número do voo: {codigo_voo} 
                 Cidade de origem:{voos[codigo_voo][0]} 
                 Cidade de destino:{voos[codigo_voo][1]}
                 Quantidade de escalas:{voos[codigo_voo][2]}
@@ -88,6 +90,8 @@ def consulta_voo():
                     
         input('\n\t<< Tecle Enter para continuar >>')
         os.system('cls' if os.name == 'nt' else 'clear')
+
+
 
 
     elif opcao == 2:
@@ -102,7 +106,8 @@ def consulta_voo():
                 cidade_org = input("Digite a cidade de origem do voo: ")
             
             if cidade_org in infos[0]:
-                print(f'''Número do voo: {codigo} 
+                print(f'''
+                Número do voo: {codigo} 
                 Cidade de origem:{voos[codigo][0]} 
                 Cidade de destino:{voos[codigo][1]}
                 Quantidade de escalas:{voos[codigo][2]}
@@ -124,7 +129,8 @@ def consulta_voo():
                 cidade_dest = input("Digite a cidade de origem do voo: ")
             
             if cidade_dest in infos[1]:
-                print(f'''Número do voo: {codigo} 
+                print(f'''
+                Número do voo: {codigo} 
                 Cidade de origem:{voos[codigo][0]} 
                 Cidade de destino:{voos[codigo][1]}
                 Quantidade de escalas:{voos[codigo][2]}
@@ -132,14 +138,30 @@ def consulta_voo():
                     
         input('\n\t<< Tecle Enter para continuar >>')
         os.system('cls' if os.name == 'nt' else 'clear')
-            
-            
-    
 
-# #def escala_menor(): 
-#     menor = 100000
-#     #for i in voos.values():
-        
+            
+def escala_menor():
+    menor_escala = 9999999
+    if not voos:
+        print("não possui voos")
+        input('\n\t<< Tecle Enter para continuar >>')
+        os.system('cls' if os.name == 'nt' else 'clear')
+    else:
+        for id_voo, inf_voo in voos.items():
+            escala_atual = inf_voo[2]
+            if escala_atual<menor_escala:
+                menor_escala = escala_atual
+        for codigo, informacoes in voos.items():
+            if menor_escala = informacoes[2]:
+                print(f'''
+                Número do voo: {codigo} 
+                Cidade de origem:{voos[codigo][0]} 
+                Cidade de destino:{voos[codigo][1]}
+                Quantidade de escalas:{voos[codigo][2]}
+                Preço passagem: {voos[codigo][3]}''')
+                input('\n\t<< Tecle Enter para continuar >>')
+                os.system('cls' if os.name == 'nt' else 'clear')
+
 
 while fim == 1:
 
@@ -182,6 +204,8 @@ while fim == 1:
         cadastro_voo()
     if opcao == 2:
         consulta_voo()
+    if opcao == 3:
+        escala_menor()
 
     elif opcao == 7:
         fim = 0
