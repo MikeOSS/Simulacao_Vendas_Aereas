@@ -46,8 +46,7 @@ def cadastro_voo():
     info_voo.append(origem)
     info_voo.append(destino)
     info_voo.append(numEscala)
-    info_voo.append(p
-                    reco)
+    info_voo.append(preco)
 
     voos[codigo] = info_voo
 
@@ -152,7 +151,7 @@ def escala_menor():
             if escala_atual<menor_escala:
                 menor_escala = escala_atual
         for codigo, informacoes in voos.items():
-            if menor_escala = informacoes[2]:
+            if menor_escala == informacoes[2]:
                 print(f'''
                 Número do voo: {codigo} 
                 Cidade de origem:{voos[codigo][0]} 
