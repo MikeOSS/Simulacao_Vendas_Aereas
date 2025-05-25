@@ -234,6 +234,35 @@ def venda_passagem():
                     input('<<Tecle qualquer coisa >>')
 
 
+def listar_passageiros():
+    print("==========================================")
+    print("          LISTAGEM DE PASSAGEIROS         ")
+    print("==========================================")
+    listar = int(input('Digite o código do voo: '))
+
+    while listar not in passageiros_dos_voos.keys():
+        print("==========================================")
+        print("             VOO NÃO EXISTE               ")
+        print("==========================================")
+        listar = int(input('Digite outro código do voo: '))
+
+    else:
+        for i in passageiros_dos_voos[listar]:
+            print(f'''
+            Nome:    {i[0]}
+            CPF:     {i[1]}
+            Origem:  {i[2]}
+            Destino: {i[3]}
+            ''')
+
+
+def cancelamento_passagem():
+    print("==========================================")
+    print("        CANCELAMENTO DE PASSAGEM          ")
+    print("==========================================")
+    excluir = input('')
+
+
 while fim == 1:
 
     print("==============================================================")
@@ -277,6 +306,8 @@ while fim == 1:
         consulta_voo()
     if opcao == 3:
         escala_menor()
+    if opcao == 4:
+        listar_passageiros()
     if opcao == 5:
         venda_passagem()
 
