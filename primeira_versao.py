@@ -260,7 +260,19 @@ def cancelamento_passagem():
     print("==========================================")
     print("        CANCELAMENTO DE PASSAGEM          ")
     print("==========================================")
-    excluir = input('')
+    excluir = int(input('Digite o seu cpf: '))
+    for codigo, infos in passageiros_dos_voos.items():
+        for i in infos:
+            if excluir == i[1]:
+                print("====================================================")
+                print(" ATENÇÃO: DESEJA MESMO CANCELAR A PASSAGEM? ")
+                print("====================================================")
+                escolha = input('Digite sim ou não: ')
+                if escolha.lower() == 'sim':
+                    infos.remove(i)
+                    print('PASSAGEIRO REMOVIDO COM SUCESSO!!')
+                else:
+                    print('OPERAÇÃO CANCELADA!')
 
 
 while fim == 1:
@@ -310,6 +322,8 @@ while fim == 1:
         listar_passageiros()
     if opcao == 5:
         venda_passagem()
+    if opcao == 6:
+        cancelamento_passagem()
 
     elif opcao == 7:
         fim = 0
