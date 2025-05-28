@@ -84,10 +84,10 @@ def consulta_voo():
             print("==========================================")
             print(f'''
             Número do voo: {codigo_voo} 
-            Cidade de origem:{voos[codigo_voo][0]} 
-            Cidade de destino:{voos[codigo_voo][1]}
-            Quantidade de escalas:{voos[codigo_voo][2]}
-            Preço passagem: {voos[codigo_voo][3]}''')
+            Cidade de origem: {voos[codigo_voo][0]} 
+            Cidade de destino: {voos[codigo_voo][1]}
+            Quantidade de escalas: {voos[codigo_voo][2]}
+                Preço passagem: {voos[codigo_voo][3]}''')
 
         input('\n\t<< Tecle Enter para continuar >>')
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -113,17 +113,17 @@ def consulta_voo():
                 print("           Informações do Voo             ")
                 print("==========================================")
                 print(f'''
-                    Número do voo: {codigo}
-                    Cidade de origem: {infos[0]}
-                    Cidade de destino: {infos[1]}
-                    Quantidade de escalas: {infos[2]}
-                        Preço passagem: {infos[3]}''')
+                Número do voo: {codigo}
+                Cidade de origem: {infos[0]}
+                Cidade de destino: {infos[1]}
+                Quantidade de escalas: {infos[2]}
+                    Preço passagem: {infos[3]}''')
 
         input('\n\t<< Tecle Enter para continuar >>')
         os.system('cls' if os.name == 'nt' else 'clear')
 
     elif opcao == 3:
-        cidade_dest = input('Digite a cidade de origem do voo: ')
+        cidade_dest = input('Digite a cidade de destino do voo: ')
         cidade_dest_cadastrada = []
 
         for codigo, infos in voos.items():
@@ -132,9 +132,9 @@ def consulta_voo():
         while cidade_dest not in cidade_dest_cadastrada:
             print("==========================================")
             print("             VOO NÃO EXISTE               ")
-            print("       Digite outra cidade de origem      ")
+            print("       Digite outra cidade de destino     ")
             print("==========================================")
-            cidade_dest = input("Digite a cidade de origem do voo: ")
+            cidade_dest = input("Digite a cidade de destino do voo: ")
             os.system('cls' if os.name == 'nt' else 'clear')
 
         for codigo, infos in voos.items():
@@ -143,11 +143,11 @@ def consulta_voo():
                 print("           Informações do Voo             ")
                 print("==========================================")
                 print(f'''
-                    Número do voo: {codigo}
-                    Cidade de origem: {infos[0]}
-                    Cidade de destino: {infos[1]}
-                    Quantidade de escalas: {infos[2]}
-                        Preço passagem: {infos[3]}''')
+                Número do voo: {codigo}
+                Cidade de origem: {infos[0]}
+                Cidade de destino: {infos[1]}
+                Quantidade de escalas: {infos[2]}
+                    Preço passagem: {infos[3]}''')
 
         input('\n\t<< Tecle Enter para continuar >>')
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -166,14 +166,18 @@ def escala_menor():
                 menor_escala = escala_atual
         for codigo, informacoes in voos.items():
             if menor_escala == informacoes[2]:
+                print("==========================================")
+                print("           Voo com menor escala           ")
+                print("==========================================")
                 print(f'''
                 Número do voo: {codigo} 
-                Cidade de origem:{voos[codigo][0]} 
-                Cidade de destino:{voos[codigo][1]}
-                Quantidade de escalas:{voos[codigo][2]}
-                Preço passagem: {voos[codigo][3]}''')
-                input('\n\t<< Tecle Enter para continuar >>')
-                os.system('cls' if os.name == 'nt' else 'clear')
+                Cidade de origem: {voos[codigo][0]} 
+                Cidade de destino: {voos[codigo][1]}
+                Quantidade de escalas: {voos[codigo][2]}
+                    Preço passagem: {voos[codigo][3]}''')
+                
+        input('\n\t<< Tecle Enter para continuar >>')
+        os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def venda_passagem():
@@ -207,14 +211,16 @@ def venda_passagem():
                 if opcao == 1:
                     destino = input('Digite seu destino: ')
                 else:
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     break
-
+                    
             if origem.lower() != infos[0].lower():
                 print("==========================================")
                 print("             NÃO TEMOS PASSAGENS          ")
                 print("             SAINDO DE SUA CIDADE         ")
                 print("==========================================")
-                input('<<Tecle qualquer coisa>>')
+                input('\n\t<< Tecle Enter para continuar >>')
+                os.system('cls' if os.name == 'nt' else 'clear')
 
             if origem in infos[0] and destino in infos[1]:
                 print(
@@ -235,7 +241,8 @@ def venda_passagem():
                     passageiros_dos_voos[codigo].append(passageiros)
                 else:
                     print('Ok! Redirecionando para a tela principal: ')
-                    input('<<Tecle qualquer coisa >>')
+                    input('\n\t<< Tecle Enter para continuar >>')
+                    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def listar_passageiros():
@@ -258,7 +265,8 @@ def listar_passageiros():
             Origem:  {i[2]}
             Destino: {i[3]}
             ''')
-
+    input('\n\t<< Tecle Enter para continuar >>')
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def cancelamento_passagem():
     print("==========================================")
